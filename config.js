@@ -1,3 +1,6 @@
 // Runtime backend URL. Edit this one line and redeploy to repoint the backend.
-// Permanent backend on fa01 VPS (systemd vkapp.service + Caddy TLS via sslip.io).
-window.__API_BASE__ = "https://vkapp.178-105-123-141.sslip.io";
+// Backend on fa01 VPS (systemd vkapp.service + Caddy) behind Cloudflare.
+// Uses a real Cloudflare-proxied domain (vkapi.cibo.health) — NOT sslip.io,
+// which security DNS resolvers (incl. RU networks / VK's moderation env) block,
+// causing "Не удалось связаться с сервером" for those users.
+window.__API_BASE__ = "https://vkapi.cibo.health";
